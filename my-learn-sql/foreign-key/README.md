@@ -33,5 +33,5 @@ my-learn-sql/foreign-key
 
 ---
 
-三：删除数据库
+# 三：删除数据库
 drop database if exists test;
