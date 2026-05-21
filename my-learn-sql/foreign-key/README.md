@@ -1,4 +1,4 @@
-# MySQL Constraint Demo
+# MySQL 约束演示
 
 一个用于学习 MySQL 约束控制（Constraint）的练习仓库。
 
@@ -30,8 +30,12 @@ my-learn-sql/foreign-key
 ├── sql_02_create_table.sql
 ├── sql_03_insert_success.sql
 └── sql_04_insert_error.sql
+```
 
 ---
 
-# 三：删除数据库
-drop database if exists test;
+# 三、删除数据库
+
+```sql
+DROP DATABASE IF EXISTS test;
+```
