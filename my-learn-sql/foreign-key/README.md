@@ -30,3 +30,8 @@ my-learn-sql/foreign-key
 ├── sql_02_create_table.sql
 ├── sql_03_insert_success.sql
 └── sql_04_insert_error.sql
+
+---
+
+三：删除数据库
+drop database if exists test;
