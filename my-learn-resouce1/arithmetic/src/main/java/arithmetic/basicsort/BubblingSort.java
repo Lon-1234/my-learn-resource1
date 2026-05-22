@@ -1,4 +1,4 @@
-package arithmetic.basuc;
+package arithmetic.basicsort;
 
 import org.junit.Test;
 
