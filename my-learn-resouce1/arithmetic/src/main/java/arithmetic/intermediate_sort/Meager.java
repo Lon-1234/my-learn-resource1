@@ -1,4 +1,4 @@
-package arithmetic.intermediatesort;
+package arithmetic.intermediate_sort;
 
 import org.junit.Test;
 
