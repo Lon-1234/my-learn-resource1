@@ -1,0 +1,157 @@
+INT
+age INT
+
+作用：
+
+存储整数
+
+例如：
+
+18
+20
+100
+2. BIGINT
+id BIGINT
+
+作用：
+
+存储更大的整数
+
+企业开发：
+
+主键 id 经常使用 BIGINT
+
+因为数据量可能很大。
+
+3. TINYINT
+status TINYINT
+
+作用：
+
+存储很小的整数
+
+常用于：
+
+状态字段
+
+例如：
+
+值	含义
+0	未完成
+1	已完成
+六、字符串类型（重点）🔥
+1. VARCHAR（最重要）
+name VARCHAR(20)
+
+含义：
+
+最多存 20 个字符
+
+例如：
+
+long
+admin
+root
+为什么 VARCHAR 最常用
+
+因为：
+
+字符串长度不固定
+
+例如：
+
+Tom
+Alexander
+
+长度不同。
+
+VARCHAR 会：
+
+按实际长度存储
+
+节省空间。
+
+2. CHAR
+CHAR(10)
+
+特点：
+
+固定长度
+
+即使：
+
+'abc'
+
+也会占：
+
+10 个字符空间
+
+一般：
+
+性能高
+但浪费空间
+
+适合：
+
+身份证
+手机号
+固定长度字段
+3. TEXT
+description TEXT
+
+作用：
+
+存储大文本
+
+例如：
+
+文章内容
+评论内容
+简介
+VARCHAR 和 TEXT 区别（重点）
+类型	特点
+VARCHAR	小字符串
+TEXT	大文本
+
+企业中：
+
+用户名：
+VARCHAR
+
+文章内容：
+TEXT
+七、时间类型（重点）
+1. DATE
+birthday DATE
+
+格式：
+
+2026-05-21
+
+只有日期。
+
+2. DATETIME（最常用）
+create_time DATETIME
+
+格式：
+
+2026-05-21 20:30:00
+
+包含：
+
+年
+月
+日
+时
+分
+秒
+
+企业最常用。
+
+3. TIMESTAMP
+
+作用类似 DATETIME。
+
+区别：
+
+TIMESTAMP 更适合自动更新时间
