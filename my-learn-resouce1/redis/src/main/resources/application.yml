@@ -1,0 +1,9 @@
+server:
+  port: 7070
+  servlet:
+    context-path: /redis
+
+spring:
+  redis:
+    host: 127.0.0.1
+    port: 6379

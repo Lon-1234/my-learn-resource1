@@ -1,0 +1,16 @@
+Iterable<E>【接口】
+   ▲
+   │ extends
+Collection<E>【接口】
+   ▲
+   │ extends
+Set<E>【接口】
+   ▲
+   │ implements
+AbstractSet<E>【抽象类】
+   ▲
+   │ extends
+HashSet<E>【类】
+   │
+   ├── implements Cloneable【接口】
+   └── implements Serializable【接口】
