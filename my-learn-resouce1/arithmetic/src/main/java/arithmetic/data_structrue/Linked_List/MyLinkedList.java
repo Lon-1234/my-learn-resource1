@@ -12,13 +12,13 @@ public class MyLinkedList<E> implements Iterable<E> {
     //    记录链表的长度
     private int N;
 
-   private class Node {
+    private class Node {
         //        元素
         E e;
         //         尾指针
         Node next;
 
-         Node(E e, Node next) {
+        Node(E e, Node next) {
             this.e = e;
             this.next = next;
         }
@@ -179,5 +179,36 @@ public class MyLinkedList<E> implements Iterable<E> {
             return data;
         }
     }
+
+
+    /*
+     * 链表的反转
+     * */
+
+    //反转整个链表
+    public void reverse() {
+//当前链表为空 则不反转 否则调用重载方法
+        if (isEmpty()) {
+            return;
+        }
+        reverse(hand.next);
+    }
+
+    public Node reverse(Node curr) {
+//        当当前节点没有下一个节点则，结束调用 返回最后一个节点
+        if (curr.next == null) {
+            hand.next = curr;
+            return curr;
+        }
+
+//        如果不是 则递归反转curr的下一个节点 返回值，链表反转后，当前节点的上一个节点
+        Node pre = reverse(curr.next);
+//        让返回的节点的下一个节点变成curr
+        pre.next = curr;
+//        把当前节点的下一个节点变为null
+        curr.next = null;
+        return curr;
+    }
+
 
 }
