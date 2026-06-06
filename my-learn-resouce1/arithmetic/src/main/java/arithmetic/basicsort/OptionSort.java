@@ -1,4 +1,4 @@
-package arithmetic.basicsort;
+package src.main.java.arithmetic.basicsort;
 
 
 import org.junit.Test;

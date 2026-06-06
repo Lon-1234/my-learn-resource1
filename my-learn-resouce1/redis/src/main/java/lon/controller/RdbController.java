@@ -1,10 +1,12 @@
 package lon.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+
 
 /**
  * RDB 持久化学习
@@ -65,7 +67,7 @@ public class RdbController {
     继续工作
     问题：保存期间无法处理请求
     */
-    @GetMapping("rdb/save")
+    @GetMapping("/rdb/save")
     public String save() {
         redisTemplate.getConnectionFactory()
                 .getConnection()
@@ -87,13 +89,14 @@ public class RdbController {
      */
 //    BGSAVE
     @GetMapping("/rdb/bgsave")
-    public String bgsave(){
+    public String bgsave() {
         redisTemplate.getConnectionFactory()
                 .getConnection()
                 .serverCommands()
                 .bgSave();
         return "BGSAVE执行成功";
     }
+
     @GetMapping("/rdb/check")
     public String checkRdb() {
 

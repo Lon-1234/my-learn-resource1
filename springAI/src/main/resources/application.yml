@@ -1,0 +1,9 @@
+spring:
+  ai:
+    openai:
+      base-url: https://api.siliconflow.cn
+      api-key: sk-zqkfrtwckhuvgohqmemgmxkgpinzuywxlzgpbczuuevmbkbg
+      chat:
+        options:
+          model: Pro/zai-org/GLM-5.1
+          temperature: 0.3

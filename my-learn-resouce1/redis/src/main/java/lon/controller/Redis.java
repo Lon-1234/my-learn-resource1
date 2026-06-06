@@ -1,12 +1,14 @@
 package lon.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.annotation.Resource;
-import java.util.*;
 import java.util.concurrent.TimeUnit;
+import jakarta.annotation.Resource;
+import java.util.*;
+
 
 @RestController
 public class Redis {
@@ -41,6 +43,7 @@ public class Redis {
          * 三、等待 31 秒，查看 key 是否已经过期
          */
         Thread.sleep(31000);
+
 
         Object value = redisTemplate.opsForValue().get("key");
 
