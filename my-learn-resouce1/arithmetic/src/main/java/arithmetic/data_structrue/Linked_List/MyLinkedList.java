@@ -1,7 +1,8 @@
 package arithmetic.data_structrue.Linked_List;
 
-import java.util.Comparator;
+
 import java.util.Iterator;
+import java.util.Objects;
 
 /*
  * 这是我的链表
@@ -12,7 +13,7 @@ public class MyLinkedList<E> implements Iterable<E> {
     //    记录链表的长度
     private int N;
 
-    private class Node {
+   private class Node {
         //        元素
         E e;
         //         尾指针
@@ -211,4 +212,99 @@ public class MyLinkedList<E> implements Iterable<E> {
     }
 
 
+    /*
+     * Fast slow Pointer
+     * */
+
+
+    //    中间值问题
+
+    /**
+     * @return 返回链表的中间节点的值
+     */
+    public E getMid() {
+//定义两个指针
+        Node fast = this.hand.next;
+        Node slow = this.hand.next;
+//        使用两个指针遍历链表，当快指针指向的节点没有下一个节点了，就可以结束了，结束之后，快慢指针指向的节点就是中间值
+        while (fast != null && fast.next != null) {
+//    变换两个指针的值
+            fast = fast.next.next;
+            slow = slow.next;
+        }
+        return slow.e;
+    }
+
+
+//    单项链表是否有环
+
+    /**
+     * @return true为有环 false 为无环
+     */
+    public boolean isCircle() {
+//        定义两个快慢指针
+        Node fast = this.hand.next;
+        Node slow = this.hand.next;
+//        遍历链表，如果快指针和慢指针直线同一个节点，那么证明有环
+        while (fast != null && fast.next != null) {
+//            变换fast和slow
+            fast = fast.next.next;
+            slow = slow.next;
+//            判断他们两个是否指向同一个节点
+            if (Objects.equals(fast, slow)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /*
+    * 这里提供一个方法用于将链表闭环 让尾节点指向第二个元素
+    *
+    * */
+    public void Entrance(){
+        Node hand = this.hand.next;
+        while (hand.next!=null){
+            hand = hand.next;
+        }
+        hand.next = this.hand.next.next;
+    }
+
+
+    /**
+     * @return 返回值是有环链表的入口 没有返回null
+     */
+    //    有环链表入口问题
+    public Node getEntrance() {
+//        前提是链表得是环
+        if (!isCircle()) {
+            return null;
+        }
+//        定义快慢指针
+        Node fast = this.hand.next;
+        Node slow = this.hand.next;
+        Node temp = null;
+//        遍历链表，先找到环（快慢指针相遇），准备一个临时指针，指向链表的首节点，接着遍历，直到慢指针和临时指针相遇，相遇的这个节点就是环的入口
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+            if (Objects.equals(fast, slow)) {
+                temp = this.hand.next;
+                continue;
+            }
+//            让临时节点往后走
+            if (temp != null) {
+                temp = temp.next;
+//                判断临时指针和慢指针是否相遇
+                if (Objects.equals(slow, temp)) {
+                    break;
+                }
+            }
+
+        }
+        return temp;
+    }
+
 }
+
+
